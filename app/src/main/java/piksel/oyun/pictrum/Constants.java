@@ -4,7 +4,11 @@ public final class Constants {
 
     public static final String[] IMAGES = new String[]{
             // Heavy images
+            "http://i.imgur.com/VtmnJ5J.png",
+            "http://www.wallpaper77.com/upload/DesktopWallpapers/cache/The-Dock-landscape-beach-1920x1080.jpg",
+            "http://xeon24.com/data/wallpapers/22/578958-hd-wallpaper-1920x1080.jpg",
             "https://lh6.googleusercontent.com/-55osAWw3x0Q/URquUtcFr5I/AAAAAAAAAbs/rWlj1RUKrYI/s1024/A%252520Photographer.jpg",
+            "http://i.imgur.com/MfzzPIj.png",
             "https://lh4.googleusercontent.com/--dq8niRp7W4/URquVgmXvgI/AAAAAAAAAbs/-gnuLQfNnBA/s1024/A%252520Song%252520of%252520Ice%252520and%252520Fire.jpg",
             "https://lh5.googleusercontent.com/-7qZeDtRKFKc/URquWZT1gOI/AAAAAAAAAbs/hqWgteyNXsg/s1024/Another%252520Rockaway%252520Sunset.jpg",
             "https://lh3.googleusercontent.com/--L0Km39l5J8/URquXHGcdNI/AAAAAAAAAbs/3ZrSJNrSomQ/s1024/Antelope%252520Butte.jpg",
@@ -149,4 +153,11 @@ public final class Constants {
     public static class Config {
         public static final boolean DEVELOPER_MODE = false;
     }
+
+    public static class Extra {
+        public static final String FRAGMENT_INDEX = "com.nostra13.example.universalimageloader.FRAGMENT_INDEX";
+        public static final String IMAGE_POSITION = "com.nostra13.example.universalimageloader.IMAGE_POSITION";
+    }
+
+    public static int position = 0;
 }

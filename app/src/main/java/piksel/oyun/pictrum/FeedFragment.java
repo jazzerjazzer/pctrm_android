@@ -1,20 +1,8 @@
-/*
- * Copyright (C) 2015 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package piksel.oyun.pictrum;
+
+/**
+ * Created by Dogancan on 29/07/15.
+ */
 
 import android.content.Context;
 import android.content.Intent;
@@ -37,7 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class CheeseListFragment extends Fragment {
+public class FeedFragment extends Fragment {
 
     @Nullable
     @Override
@@ -47,11 +35,15 @@ public class CheeseListFragment extends Fragment {
         setupRecyclerView(rv);
         return rv;
     }
+    public static final String[] feedStrings = {
+            "Lisa liked your photo!","John made a comment on your album!","Giray wants to share his album with you",
+            "15 photos are added to the ToruCON2015.", "MetuCON has a new moderator"
+    };
 
     private void setupRecyclerView(RecyclerView recyclerView) {
         recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext()));
         recyclerView.setAdapter(new SimpleStringRecyclerViewAdapter(getActivity(),
-                getRandomSublist(Cheeses.sCheeseStrings, 20)));
+                getRandomSublist(feedStrings, 10)));
     }
 
     private List<String> getRandomSublist(String[] array, int amount) {
@@ -113,16 +105,6 @@ public class CheeseListFragment extends Fragment {
             holder.mBoundString = mValues.get(position);
             holder.mTextView.setText(mValues.get(position));
 
-            holder.mView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Context context = v.getContext();
-                    Intent intent = new Intent(context, CheeseDetailActivity.class);
-                    intent.putExtra(CheeseDetailActivity.EXTRA_NAME, holder.mBoundString);
-
-                    context.startActivity(intent);
-                }
-            });
 
             Glide.with(holder.mImageView.getContext())
                     .load(Cheeses.getRandomCheeseDrawable())

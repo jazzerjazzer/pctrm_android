@@ -61,6 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         app:layout_anchor="@id/appbar"
+        android:id="@+id/addPhoto"
         app:layout_anchorGravity="bottom|right|end"
         android:src="@drawable/ic_plus"
         android:layout_margin="@dimen/fab_margin"

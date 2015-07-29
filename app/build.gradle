@@ -32,4 +32,6 @@ dependencies {
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.4'
     compile 'com.davemorrissey.labs:subsampling-scale-image-view:3.1.4'
 
+    compile 'com.github.chrisbanes.photoview:library:+'
+    compile 'com.github.siyamed:android-shape-imageview:0.9.+@aar'
 }

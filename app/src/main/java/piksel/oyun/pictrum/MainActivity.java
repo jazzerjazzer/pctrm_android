@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "You have succesfully added an album.", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         Adapter adapter = new Adapter(getSupportFragmentManager());
-        adapter.addFragment(new CheeseListFragment(), "Feed");
+        adapter.addFragment(new FeedFragment(), "Feed");
         adapter.addFragment(new CheeseListFragment(), "Albums");
         adapter.addFragment(new CheeseListFragment(), "Messages");
         viewPager.setAdapter(adapter);

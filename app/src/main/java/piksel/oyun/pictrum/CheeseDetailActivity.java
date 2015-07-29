@@ -22,6 +22,8 @@ import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
@@ -69,6 +71,15 @@ public class CheeseDetailActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 startImagePagerActivity(position);
+            }
+        });
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.addPhoto);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Select photos to add this album.", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
             }
         });
 
@@ -186,10 +197,8 @@ public class CheeseDetailActivity extends AppCompatActivity {
     }
 
     protected void startImagePagerActivity(int position) {
-        /*Intent intent = new Intent(getActivity(), SimpleImageActivity.class);
-        intent.putExtra(Constants.Extra.FRAGMENT_INDEX, ImagePagerFragment.INDEX);
-        intent.putExtra(Constants.Extra.IMAGE_POSITION, position);
-        startActivity(intent);*/
-        System.out.println("StartImagePagerActivity");
+        Intent intent = new Intent(this, ImagePagerActivity.class);
+        Constants.position = position;
+        startActivity(intent);
     }
 }
